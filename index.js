@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
-const sql = require('mssql');
+/* const sql = require('mssql'); */
 const path = require('path');
 const app = express();
 const cors = require('cors');
