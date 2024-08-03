@@ -9,7 +9,7 @@ const fs = require('fs');
 const port = process.env.PORT || 3000;
 
 // SQL Server connection settings
-const config = {
+/* const config = {
     user: 'lovemehateyou',
     password: 'zerubabel11821996',
     server: 'LAPTOP-RRR8Q3CJ',
@@ -19,7 +19,7 @@ const config = {
         trustServerCertificate: true
     }
 };
-
+ */
 async function fetchNews() {
     try {
         const { data } = await axios.get('https://www.animenewsnetwork.com/');
@@ -56,10 +56,9 @@ async function fetchNews() {
         const pathToFile2 = path.join(__dirname, 'public', 'all-articles.json');
         fs.writeFileSync(pathToFile2, JSON.stringify(articles, null, 2));
 
-        await sql.connect(config);
-        
-
-        for (const article of articles) {
+        //await sql.connect(config);
+    
+        /* for (const article of articles) {
             let request = new sql.Request();
 
             let result = await request
@@ -82,7 +81,7 @@ async function fetchNews() {
             }
         }
         await sql.close()
-        console.log('Articles saved!');
+        console.log('Articles saved!'); */
     } catch (error) {
         console.error('Error fetching data:', error);
     }
